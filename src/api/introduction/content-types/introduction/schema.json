@@ -1,19 +1,20 @@
 {
-    "kind": "singleType",
-    "collectionName": "introductions",
-    "info": {
-        "singularName": "introduction",
-        "pluralName": "introductions",
-        "displayName": "Introduction"
-    },
-    "options": {
-        "draftAndPublish": true
-    },
-    "pluginOptions": {},
-    "attributes": {
-        "content": {
-            "type": "richtext",
-            "required": true
-        }
+  "kind": "singleType",
+  "collectionName": "introductions",
+  "info": {
+    "singularName": "introduction",
+    "pluralName": "introductions",
+    "displayName": "Introduction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true
     }
+  }
 }
