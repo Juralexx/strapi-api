@@ -1,3 +1,37 @@
+export namespace Site {
+    export type defaultType = {
+        id: number,
+        attributes: IAttributes
+    }
+
+    export interface IAttributes extends Type { }
+
+    export interface Type {
+        denomination?: string,
+        job?: string,
+        slogan?: string,
+        creation_date?: string,
+        adress?: string,
+        street?: string,
+        postcode?: string,
+        city?: string,
+        latitude?: string,
+        longitude?: string,
+        googlemap?: string,
+        mail?: string,
+        phone?: string,
+        opening?: Array<{ [key: string]: string }>
+        legales?: Legals
+    }
+
+    export interface Legals {
+        raison_social?: string,
+        adresse_siege?: string,
+        ville_RCS?: string,
+        SIRET?: string,
+    }
+}
+
 interface ContentBase {
     createdBy?: Record<string, any> | string,
     createdAt?: Record<string, any> | string,
@@ -7,39 +41,35 @@ interface ContentBase {
     publishedAt?: Record<string, any> | string
 }
 
-export namespace Introduction {
+/**
+ * 
+ */
+
+export namespace Home {
     export type defaultType = {
         id: number,
-        attributes: IAttributes
+        introduction: Introduction,
+        checkerboard: Checkerboard
     }
 
-    export interface IAttributes extends ContentBase {
-        content: string
-    }
-
-    export interface Type extends ContentBase {
-        id: number,
-        content: string
-    }
-}
-
-export namespace Checkerboard {
-    export type defaultType = {
-        id: number,
-        attributes: IAttributes
-    }
-
-    export interface IAttributes extends ContentBase {
-        title: string,
-        content: string
-    }
-
-    export interface Type extends ContentBase {
+    export interface Introduction {
         id: number,
         title: string,
         content: string
     }
+    
+    export interface Checkerboard {
+        id: number,
+        title: string,
+        content: string,
+        link: string,
+        button_name: string
+    }
 }
+
+/**
+ * 
+ */
 
 export namespace Actuality {
     export type defaultType = {
@@ -49,10 +79,15 @@ export namespace Actuality {
 
     export interface IAttributes extends ContentBase {
         title: string,
+        titleUrl: string,
+        url: string,
         content: string,
         date: string,
-        image?: Record<string, any>,
+        image?: Image,
         gallery?: any
+        image_display: boolean,
+        image_side: 'Gauche' | 'Droite' | 'Haut',
+        components: any[]
     }
 
     export interface Type extends ContentBase {
@@ -60,7 +95,33 @@ export namespace Actuality {
         title: string,
         content: string,
         date: string,
-        image?: Record<string, any>,
+        image?: CustomImage,
         gallery?: any
+        image_display: boolean,
+        image_side: 'Gauche' | 'Droite' | 'Haut',
+        components: any[]
+    }
+
+    interface ImageBase {
+        url?: string,
+        name?: string,
+        alternativeText?: string,
+        caption?: string,
+        width?: number,
+        height?: number,
+        ext?: string,
+        mime?: string,
+        blurhash?: string
+    }
+
+    export interface Image {
+        data: {
+            id?: number,
+            attributes?: ImageBase
+        }
+    }
+
+    export interface CustomImage extends ImageBase {
+        id?: number,
     }
 }
