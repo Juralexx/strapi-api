@@ -41,3 +41,20 @@ export const numericDateParser = (num: string) => {
     let date = new Date(timestamp).toLocaleDateString('fr-FR', options)
     return date.toString()
 }
+
+export const decodeHtmlEntity = (str: string) => {
+    return str.replace(/&#(\d+);/g, (match, dec) => {
+        return String.fromCharCode(dec);
+    });
+};
+
+/**
+ * Check if a string is an HTML element (<> ... </>)
+ * @param {*} string String to check
+ */
+
+export const isHTML = (string) => {
+    let regexp = new RegExp(/<(?=.*? .*?\/ ?>|br|hr|input|!--|wbr)[a-z]+.*?>|<([a-z]+).*?<\/\1>/i)
+    if (regexp.test(string)) return true
+    else return false
+}
