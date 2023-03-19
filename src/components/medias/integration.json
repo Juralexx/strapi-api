@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_medias_integrations",
+  "info": {
+    "displayName": "Intégration",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "embed": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

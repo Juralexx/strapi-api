@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_general_carrousel_d_images",
+  "info": {
+    "displayName": "Carrousel d'images",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "carousel_type": {
+      "type": "enumeration",
+      "enum": [
+        "Classique",
+        "Photo"
+      ],
+      "default": "Classique"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_general_groupe_de_cartes",
+  "info": {
+    "displayName": "Groupe de Cartes",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "cards": {
+      "displayName": "Carte",
+      "type": "component",
+      "repeatable": true,
+      "component": "general.carte",
+      "required": true
+    }
+  }
+}

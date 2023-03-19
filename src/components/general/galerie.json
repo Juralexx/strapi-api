@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_medias_galeries",
+  "info": {
+    "displayName": "Galerie",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "gallery_type": {
+      "type": "enumeration",
+      "enum": [
+        "Classique",
+        "Masonry"
+      ],
+      "default": "Masonry"
+    },
+    "content": {
+      "type": "text"
+    }
+  }
+}

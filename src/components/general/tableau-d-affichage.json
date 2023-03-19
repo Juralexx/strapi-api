@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_general_tableau_d_affichages",
+  "info": {
+    "displayName": "Tableau d'affichage",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "images_per_line": {
+      "type": "enumeration",
+      "enum": [
+        "Un",
+        "Deux",
+        "Trois"
+      ],
+      "default": "Deux"
+    },
+    "images": {
+      "type": "component",
+      "repeatable": true,
+      "component": "medias.image"
+    }
+  }
+}

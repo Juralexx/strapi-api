@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_general_damiers",
+  "info": {
+    "displayName": "Damier",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image_side": {
+      "type": "enumeration",
+      "enum": [
+        "Gauche",
+        "Droite"
+      ],
+      "default": "Gauche"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "title_placement": {
+      "type": "enumeration",
+      "enum": [
+        "Au-dessus",
+        "Dans le contenu"
+      ],
+      "default": "Au-dessus"
+    }
+  }
+}

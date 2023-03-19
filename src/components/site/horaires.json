@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_site_horaires",
+  "info": {
+    "displayName": "Horaires"
+  },
+  "options": {},
+  "attributes": {
+    "day": {
+      "type": "string",
+      "required": true
+    },
+    "range": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

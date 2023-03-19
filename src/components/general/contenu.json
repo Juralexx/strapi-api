@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_general_contenus",
+  "info": {
+    "displayName": "Contenu"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

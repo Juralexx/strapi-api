@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_medias_images",
+  "info": {
+    "displayName": "Image"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "text_placement": {
+      "type": "enumeration",
+      "enum": [
+        "Au-dessus",
+        "En-dessous"
+      ],
+      "default": "Au-dessus"
+    }
+  }
+}
