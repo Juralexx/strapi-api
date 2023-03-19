@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "introduction": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.introduction",
+      "required": true
+    },
+    "checkerboards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.damier",
+      "required": true
+    }
+  }
+}
