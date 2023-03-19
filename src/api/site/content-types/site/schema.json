@@ -1,0 +1,79 @@
+{
+  "kind": "singleType",
+  "collectionName": "sites",
+  "info": {
+    "singularName": "site",
+    "pluralName": "sites",
+    "displayName": "Site",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "denomination": {
+      "type": "string",
+      "required": true
+    },
+    "job": {
+      "type": "string",
+      "required": true
+    },
+    "slogan": {
+      "type": "string"
+    },
+    "creation_date": {
+      "type": "string"
+    },
+    "adress": {
+      "type": "string"
+    },
+    "street": {
+      "type": "string"
+    },
+    "postcode": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "googlemap": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    },
+    "opening": {
+      "displayName": "Horaires",
+      "type": "component",
+      "repeatable": true,
+      "component": "site.horaires"
+    },
+    "raison_social": {
+      "type": "string",
+      "required": true
+    },
+    "adresse_siege": {
+      "type": "string",
+      "required": true
+    },
+    "ville_RCS": {
+      "type": "string",
+      "required": true
+    },
+    "SIRET": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
