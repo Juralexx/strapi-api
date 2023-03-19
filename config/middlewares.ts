@@ -1,6 +1,19 @@
 export default [
     'strapi::errors',
-    'strapi::security',
+    {
+        name: "strapi::security",
+        config: {
+            contentSecurityPolicy: {
+                useDefaults: true,
+                directives: {
+                    'frame-src': ["'self'", process.env.FRONT_URL],
+                    'frame-ancestors': null,
+                    upgradeInsecureRequests: null,
+                },
+            },
+            frameguard: false,
+        },
+    },
     'strapi::cors',
     'strapi::poweredBy',
     'strapi::logger',
