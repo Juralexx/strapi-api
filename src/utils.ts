@@ -31,7 +31,7 @@ export const removeAccents = (string: string) => {
 }
 
 /**
- * Return date formated : 00-00-000
+ * Return date formated : 00-00-0000
  * @param {*} num Date to convert
  */
 
