@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_site_liens",
+  "info": {
+    "displayName": "Lien",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "_blank",
+        "_self",
+        "_parent",
+        "_top"
+      ],
+      "default": "_self"
+    }
+  }
+}

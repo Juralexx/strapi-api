@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_site_menus",
+  "info": {
+    "displayName": "Menu",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.lien"
+    }
+  }
+}
