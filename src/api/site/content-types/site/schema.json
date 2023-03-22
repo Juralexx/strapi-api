@@ -74,6 +74,17 @@
     "SIRET": {
       "type": "string",
       "required": true
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "domain_name": {
+      "type": "string",
+      "required": true
+    },
+    "publisher": {
+      "type": "string",
+      "required": true
     }
   }
 }
