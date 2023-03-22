@@ -1,23 +1,24 @@
 {
   "collectionName": "components_medias_images",
   "info": {
-    "displayName": "Image"
+    "displayName": "Image",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "text": {
+    "content": {
       "type": "text"
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "text_placement": {
       "type": "enumeration",
