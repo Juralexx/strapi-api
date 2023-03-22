@@ -18,7 +18,7 @@
     },
     "content": {
       "type": "richtext",
-      "required": true
+      "required": false
     },
     "date": {
       "type": "date",
