@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "informations_menus",
+  "info": {
+    "singularName": "informations-menu",
+    "pluralName": "informations-menus",
+    "displayName": "Informations légales"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "informations": {
+      "type": "dynamiczone",
+      "components": [
+        "navigation.lien"
+      ],
+      "required": true
+    }
+  }
+}
