@@ -32,6 +32,10 @@ export namespace Site {
     }
 }
 
+/**
+ * 
+ */
+
 interface ContentBase {
     createdBy?: Record<string, any> | string,
     createdAt?: Record<string, any> | string,
@@ -79,7 +83,6 @@ export namespace Actuality {
 
     export interface IAttributes extends ContentBase {
         title: string,
-        titleUrl: string,
         url: string,
         content: string,
         date: string,
@@ -93,8 +96,66 @@ export namespace Actuality {
     export interface Type extends ContentBase {
         id: number,
         title: string,
+        url: string,
         content: string,
         date: string,
+        image?: CustomImage,
+        gallery?: any
+        image_display: boolean,
+        image_side: 'Gauche' | 'Droite' | 'Haut',
+        components: any[]
+    }
+
+    interface ImageBase {
+        url?: string,
+        name?: string,
+        alternativeText?: string,
+        caption?: string,
+        width?: number,
+        height?: number,
+        ext?: string,
+        mime?: string,
+        blurhash?: string
+    }
+
+    export interface Image {
+        data: {
+            id?: number,
+            attributes?: ImageBase
+        }
+    }
+
+    export interface CustomImage extends ImageBase {
+        id?: number,
+    }
+}
+
+/**
+ * 
+ */
+
+export namespace Service {
+    export type defaultType = {
+        id: number,
+        attributes: IAttributes
+    }
+
+    export interface IAttributes extends ContentBase {
+        title: string,
+        url: string,
+        content: string,
+        image?: Image,
+        gallery?: any
+        image_display: boolean,
+        image_side: 'Gauche' | 'Droite' | 'Haut',
+        components: any[]
+    }
+
+    export interface Type extends ContentBase {
+        id: number,
+        title: string,
+        url: string,
+        content: string,
         image?: CustomImage,
         gallery?: any
         image_display: boolean,
