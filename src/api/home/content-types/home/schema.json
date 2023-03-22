@@ -23,6 +23,11 @@
       "repeatable": true,
       "component": "home.damier",
       "required": true
+    },
+    "summary": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.sommaire"
     }
   }
 }
