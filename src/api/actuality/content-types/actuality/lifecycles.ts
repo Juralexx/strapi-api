@@ -30,13 +30,15 @@ export default {
         })
 
         entries.forEach((entry: Actuality.Type) => {
-            if (entry.title === data.title && entry.date === data.date) {
-                throw new ValidationError('Une actualité possédant le même titre existe déjà à cette date. Deux actualités ne peuvent pas posséder la même date et le même titre.');
+            if (entry.id !== data.id) {
+                if (entry.title === data.title && entry.date === data.date) {
+                    throw new ValidationError('Une actualité possédant le même titre existe déjà à cette date. Deux actualités ne peuvent pas posséder la même date et le même titre.');
+                }
             }
         })
     },
     async beforeUpdate(event: any) {
-        const { data } = event.params;
+        const { data, where } = event.params;
         const regExp: RegExp = new RegExp('/', "g")
         if (!data.date) {
             let today = numericDateParser(new Date().toString());
@@ -55,10 +57,13 @@ export default {
         const entries = await strapi.entityService.findMany('api::actuality.actuality', {
             populate: 'deep',
         })
+        console.log(event.params);
 
         entries.forEach((entry: Actuality.Type) => {
-            if (entry.title === data.title && entry.date === data.date) {
-                throw new ValidationError('Une actualité possèdant le même titre existe déjà à cette date. Deux actualités ne peuvent pas posséder la même date et le même titre.');
+            if (entry.id !== where.id) {
+                if (entry.title === data.title && entry.date === data.date) {
+                    throw new ValidationError('Une actualité possèdant le même titre existe déjà à cette date. Deux actualités ne peuvent pas posséder la même date et le même titre.');
+                }
             }
         })
     },
