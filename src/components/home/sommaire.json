@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_home_sommaires",
+  "info": {
+    "displayName": "Sommaire",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "small_cards": {
+      "displayName": "Petite carte",
+      "type": "component",
+      "repeatable": true,
+      "component": "home.petite-carte",
+      "required": true
+    }
+  }
+}
