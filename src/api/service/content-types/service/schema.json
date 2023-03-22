@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Services"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "image_display": {
+      "type": "boolean",
+      "default": true
+    },
+    "image_side": {
+      "type": "enumeration",
+      "enum": [
+        "Gauche",
+        "Droite",
+        "Haut"
+      ],
+      "default": "Gauche"
+    },
+    "url": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "components": {
+      "type": "dynamiczone",
+      "components": [
+        "general.damier",
+        "general.contenu",
+        "general.groupe-de-cartes",
+        "general.image",
+        "general.tableau-d-affichage",
+        "general.carrousel-d-images",
+        "general.galerie",
+        "medias.integration"
+      ]
+    }
+  }
+}
