@@ -9,7 +9,7 @@
     "title": {
       "type": "string"
     },
-    "text": {
+    "content": {
       "type": "text"
     },
     "images_per_line": {
