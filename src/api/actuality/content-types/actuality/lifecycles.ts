@@ -57,7 +57,6 @@ export default {
         const entries = await strapi.entityService.findMany('api::actuality.actuality', {
             populate: 'deep',
         })
-        console.log(event.params);
 
         entries.forEach((entry: Actuality.Type) => {
             if (entry.id !== where.id) {
