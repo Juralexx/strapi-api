@@ -104,7 +104,6 @@ export default factories.createCoreController('api::service.service', () => ({
             return { data, meta }
         }
     },
-
     async getService(ctx) {
         const { query } = ctx.request
         const { url } = query
