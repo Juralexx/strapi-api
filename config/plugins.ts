@@ -1,10 +1,8 @@
-import { editorConfig } from "../tools/editor.config"
-
 module.exports = () => {
     return {
         'strapi-plugin-populate-deep': {
             config: {
-                defaultDepth: 10, // Default is 5
+                defaultDepth: 10,
             }
         },
         'rest-cache': {
@@ -18,37 +16,39 @@ module.exports = () => {
                     },
                 },
                 strategy: {
-                    contentTypes: [{
-                        contentType: "api::site.site",
-                    }, {
-                        contentType: "api::navigation.navigation",
-                    }, {
-                        contentType: "api::home.home",
-                    }, {
-                        contentType: "api::service.service",
-                        routes: [{
-                            path: '/api/services?filtered=true',
-                            method: 'GET',
+                    enableEtagSupport: true,
+                    logs: true,
+                    clearRelatedCache: true,
+                    contentTypes: [
+                        "api::site.site",
+                        "api::navigation.navigation",
+                        "api::home.home",
+                        "api::header.header",
+                        {
+                            contentType: "api::service.service",
+                            routes: [{
+                                path: '/api/services?filtered=true',
+                                method: 'GET',
+                            }, {
+                                path: '/api/services?filtered=true&published=true',
+                                method: 'GET',
+                            }]
                         }, {
-                            path: '/api/services?filtered=true&published=true',
-                            method: 'GET',
+                            contentType: "api::actuality.actuality",
+                            routes: [{
+                                path: '/api/actualities?filtered=true',
+                                method: 'GET',
+                            }, {
+                                path: '/api/actualities?filtered=true&published=true',
+                                method: 'GET',
+                            }]
                         }]
-                    }, {
-                        contentType: "api::actuality.actuality",
-                        routes: [{
-                            path: '/api/actualities?filtered=true',
-                            method: 'GET',
-                        }, {
-                            path: '/api/actualities?filtered=true&published=true',
-                            method: 'GET',
-                        }]
-                    }]
                 }
             }
         },
         'ckeditor': {
             enabled: true,
-            config: editorConfig
+            resolve: "./src/plugins/strapi-plugin-ckeditor"
         },
         'strapi-blurhash': {
             enabled: true,
