@@ -1,30 +1,35 @@
 {
-  "collectionName": "components_general_tableau_d_affichages",
-  "info": {
-    "displayName": "Tableau d'affichage",
-    "description": ""
-  },
-  "options": {},
-  "attributes": {
-    "title": {
-      "type": "string"
+    "collectionName": "components_general_tableau_d_affichages",
+    "info": {
+        "displayName": "Tableau d'affichage",
+        "description": ""
     },
-    "content": {
-      "type": "text"
-    },
-    "images_per_line": {
-      "type": "enumeration",
-      "enum": [
-        "Un",
-        "Deux",
-        "Trois"
-      ],
-      "default": "Deux"
-    },
-    "images": {
-      "type": "component",
-      "repeatable": true,
-      "component": "medias.image"
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "content": {
+            "type": "customField",
+            "options": {
+                "output": "HTML",
+                "preset": "light"
+            },
+            "customField": "plugin::ckeditor.CKEditor"
+        },
+        "images_per_line": {
+            "type": "enumeration",
+            "enum": [
+                "Un",
+                "Deux",
+                "Trois"
+            ],
+            "default": "Deux"
+        },
+        "images": {
+            "type": "component",
+            "repeatable": true,
+            "component": "medias.image"
+        }
     }
-  }
 }

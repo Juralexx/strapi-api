@@ -1,14 +1,11 @@
 {
-  "collectionName": "components_general_contenus",
+  "collectionName": "components_home_livraisons",
   "info": {
-    "displayName": "Contenu",
+    "displayName": "Livraison",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
     "content": {
       "type": "customField",
       "options": {

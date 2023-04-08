@@ -1,14 +1,11 @@
 {
-  "collectionName": "components_general_contenus",
+  "collectionName": "components_general_information",
   "info": {
-    "displayName": "Contenu",
+    "displayName": "Information",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
     "content": {
       "type": "customField",
       "options": {

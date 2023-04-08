@@ -17,6 +17,10 @@
     "image": {
       "type": "string",
       "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": false
     }
   }
 }

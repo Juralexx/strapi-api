@@ -25,10 +25,6 @@
       ],
       "default": "Gauche"
     },
-    "content": {
-      "type": "richtext",
-      "required": true
-    },
     "title_placement": {
       "type": "enumeration",
       "enum": [
@@ -36,6 +32,15 @@
         "Dans le contenu"
       ],
       "default": "Au-dessus"
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor",
+      "required": true
     }
   }
 }

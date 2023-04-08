@@ -1,33 +1,38 @@
 {
-  "collectionName": "components_general_cartes",
-  "info": {
-    "displayName": "Carte",
-    "description": ""
-  },
-  "options": {},
-  "attributes": {
-    "title": {
-      "type": "string"
+    "collectionName": "components_general_cartes",
+    "info": {
+        "displayName": "Carte",
+        "description": ""
     },
-    "subtitle": {
-      "type": "string"
-    },
-    "content": {
-      "type": "text"
-    },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "button_name": {
-      "type": "string"
-    },
-    "button_link": {
-      "type": "string"
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "subtitle": {
+            "type": "string"
+        },
+        "content": {
+            "type": "customField",
+            "options": {
+                "output": "HTML",
+                "preset": "light"
+            },
+            "customField": "plugin::ckeditor.CKEditor"
+        },
+        "image": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "button_name": {
+            "type": "string"
+        },
+        "button_link": {
+            "type": "string"
+        }
     }
-  }
 }

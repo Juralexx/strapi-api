@@ -1,41 +1,46 @@
 {
-  "collectionName": "components_general_images",
-  "info": {
-    "displayName": "Image",
-    "description": ""
-  },
-  "options": {},
-  "attributes": {
-    "title": {
-      "type": "string"
+    "collectionName": "components_general_images",
+    "info": {
+        "displayName": "Image",
+        "description": ""
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "content": {
-      "type": "text"
-    },
-    "text_placement": {
-      "type": "enumeration",
-      "enum": [
-        "Au-dessus",
-        "En-dessous"
-      ],
-      "default": "En-dessous"
-    },
-    "image_size": {
-      "type": "enumeration",
-      "enum": [
-        "Petite",
-        "Moyenne",
-        "Grande"
-      ],
-      "default": "Moyenne"
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "content": {
+            "type": "customField",
+            "options": {
+                "output": "HTML",
+                "preset": "light"
+            },
+            "customField": "plugin::ckeditor.CKEditor"
+        },
+        "image": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "text_placement": {
+            "type": "enumeration",
+            "enum": [
+                "Au-dessus",
+                "En-dessous"
+            ],
+            "default": "En-dessous"
+        },
+        "image_size": {
+            "type": "enumeration",
+            "enum": [
+                "Petite",
+                "Moyenne",
+                "Grande"
+            ],
+            "default": "Moyenne"
+        }
     }
-  }
 }
