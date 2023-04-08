@@ -17,8 +17,12 @@
       "required": true
     },
     "content": {
-      "type": "richtext",
-      "required": false
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     },
     "date": {
       "type": "date",
