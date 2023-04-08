@@ -16,8 +16,11 @@ export default factories.createCoreController('api::site.site', ({ strapi }) => 
         const infos = await strapi.db.query('api::informations-menu.informations-menu').findOne({
             populate: ['deep']
         })
+        const header = await strapi.db.query('api::header.header').findOne({
+            populate: ['deep']
+        })
 
-        let datas: Site.Type[] = { ...entry, ...navbar, ...infos }
+        let datas: Site.Type[] = { ...entry, ...navbar, ...infos, ...header }
 
         return { ...datas };
     },
