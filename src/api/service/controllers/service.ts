@@ -24,73 +24,8 @@ export default factories.createCoreController('api::service.service', () => ({
                 if (image) {
                     img = mainImgStructure(item)
                 }
-                if (components.length > 0) {
-                    components.forEach((component: any, i: number) => {
-                        /**
-                         * Gallery component
-                         */
-                        if (component.__component === 'general.galerie') {
-                            let componentGallery: Service.CustomImage[] = []
-                            component.images.map((img: Service.CustomImage) => {
-                                return componentGallery = [...componentGallery, galleryImgStructure(img)]
-                            })
-                            components[i] = { ...component, images: componentGallery }
-                        }
-                        /**
-                         * Checkerboard component
-                         */
-                        if (component.__component === 'general.damier') {
-                            components[i].image = mainImgStructure(components[i])
-                        }
-                        /**
-                         * Cards component
-                         */
-                        if (component.__component === 'general.groupe-de-cartes') {
-                            component.cards.map((card: any, i: number) => {
-                                return component.cards[i] = { ...card, image: mainImgStructure(card) }
-                            })
-                        }
-                        /**
-                         * Image component
-                         */
-                        if (component.__component === 'general.image') {
-                            components[i].image = mainImgStructure(components[i])
-                        }
-                        /**
-                         * Billboard component
-                         */
-                        if (component.__component === 'general.tableau-d-affichage') {
-                            let componentImages: any[] = []
-                            component.images.map((img: any) => {
-                                return componentImages = [...componentImages, {
-                                    title: img.title,
-                                    text: img.text,
-                                    text_placement: img.text_placement,
-                                    ...galleryImgStructure(img.image)
-                                }]
-                            })
-                            components[i] = { ...component, images: componentImages }
-                        }
-                        /**
-                         * Carousel component
-                         */
-                        if (component.__component === 'general.carrousel-d-images') {
-                            let componentCarousel: Service.CustomImage[] = []
-                            component.images.map((img: Service.CustomImage) => {
-                                return componentCarousel = [...componentCarousel, galleryImgStructure(img)]
-                            })
-                            components[i] = { ...component, images: componentCarousel }
-                        }
-                        /**
-                         * Embed component
-                         */
-                        if (component.__component === 'medias.integration') {
-                            if (!isHTML(component.embed)) {
-                                delete components[i]
-                            }
-                        }
-                    })
-                }
+
+                filterComponents(components)
 
                 datas = [...datas, { ...item, image: img, components: components }]
             })
@@ -117,6 +52,12 @@ export default factories.createCoreController('api::service.service', () => ({
                 },
                 populate: ['deep']
             })
+
+            if (entry.image) {
+                entry.image = mainImgStructure(entry)
+            }
+
+            filterComponents(entry.components)
 
             ctx.body = entry;
         }
@@ -151,5 +92,75 @@ const galleryImgStructure = (img: Record<string, any>) => {
         ext: img['ext'],
         mime: img['mime'],
         blurhash: img['blurhash'],
+    }
+}
+
+const filterComponents = (components: any[]) => {
+    if (components.length > 0) {
+        components.forEach((component: any, i: number) => {
+            /**
+             * Gallery component
+             */
+            if (component.__component === 'general.galerie') {
+                let componentGallery: Service.CustomImage[] = []
+                component.images.map((img: Service.CustomImage) => {
+                    return componentGallery = [...componentGallery, galleryImgStructure(img)]
+                })
+                components[i] = { ...component, images: componentGallery }
+            }
+            /**
+             * Checkerboard component
+             */
+            if (component.__component === 'general.damier') {
+                components[i].image = mainImgStructure(components[i])
+            }
+            /**
+             * Cards component
+             */
+            if (component.__component === 'general.groupe-de-cartes') {
+                component.cards.map((card: any, i: number) => {
+                    return component.cards[i] = { ...card, image: mainImgStructure(card) }
+                })
+            }
+            /**
+             * Image component
+             */
+            if (component.__component === 'general.image') {
+                components[i].image = mainImgStructure(components[i])
+            }
+            /**
+             * Billboard component
+             */
+            if (component.__component === 'general.tableau-d-affichage') {
+                let componentImages: any[] = []
+                component.images.map((img: any) => {
+                    return componentImages = [...componentImages, {
+                        title: img.title,
+                        text: img.text,
+                        text_placement: img.text_placement,
+                        ...galleryImgStructure(img.image)
+                    }]
+                })
+                components[i] = { ...component, images: componentImages }
+            }
+            /**
+             * Carousel component
+             */
+            if (component.__component === 'general.carrousel-d-images') {
+                let componentCarousel: Service.CustomImage[] = []
+                component.images.map((img: Service.CustomImage) => {
+                    return componentCarousel = [...componentCarousel, galleryImgStructure(img)]
+                })
+                components[i] = { ...component, images: componentCarousel }
+            }
+            /**
+             * Embed component
+             */
+            if (component.__component === 'medias.integration') {
+                if (!isHTML(component.embed)) {
+                    delete components[i]
+                }
+            }
+        })
     }
 }
