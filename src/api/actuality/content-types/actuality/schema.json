@@ -49,7 +49,7 @@
       "enum": [
         "Gauche",
         "Droite",
-        "Haut"
+        "Bas"
       ],
       "default": "Gauche"
     },
