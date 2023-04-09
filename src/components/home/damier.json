@@ -1,28 +1,28 @@
 {
-  "collectionName": "components_home_damiers",
-  "info": {
-    "displayName": "Damier",
-    "description": ""
-  },
-  "options": {},
-  "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
+    "collectionName": "components_home_damiers",
+    "info": {
+        "displayName": "Damier",
+        "description": ""
     },
-    "link": {
-      "type": "string"
-    },
-    "button_name": {
-      "type": "string"
-    },
-    "content": {
-      "type": "customField",
-      "options": {
-        "output": "HTML",
-        "preset": "light"
-      },
-      "customField": "plugin::ckeditor.CKEditor"
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "content": {
+            "type": "customField",
+            "options": {
+                "output": "HTML",
+                "preset": "light"
+            },
+            "customField": "plugin::ckeditor.CKEditor"
+        },
+        "link": {
+            "type": "string"
+        },
+        "button_name": {
+            "type": "string"
+        }
     }
-  }
 }
