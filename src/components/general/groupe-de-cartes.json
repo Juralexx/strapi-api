@@ -6,6 +6,19 @@
   },
   "options": {},
   "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "columns": {
+      "type": "enumeration",
+      "enum": [
+        "Un",
+        "Deux",
+        "Trois",
+        "Quatre"
+      ],
+      "default": "Trois"
+    },
     "cards": {
       "displayName": "Carte",
       "type": "component",
