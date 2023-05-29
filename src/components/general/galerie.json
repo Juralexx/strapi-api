@@ -1,37 +1,48 @@
 {
-    "collectionName": "components_medias_galeries",
-    "info": {
-        "displayName": "Galerie",
-        "description": ""
+  "collectionName": "components_medias_galeries",
+  "info": {
+    "displayName": "Galerie",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
     },
-    "options": {},
-    "attributes": {
-        "title": {
-            "type": "string"
-        },
-        "content": {
-            "type": "customField",
-            "options": {
-                "output": "HTML",
-                "preset": "light"
-            },
-            "customField": "plugin::ckeditor.CKEditor"
-        },
-        "images": {
-            "type": "media",
-            "multiple": true,
-            "required": true,
-            "allowedTypes": [
-                "images"
-            ]
-        },
-        "gallery_type": {
-            "type": "enumeration",
-            "enum": [
-                "Classique",
-                "Masonry"
-            ],
-            "default": "Masonry"
-        }
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "gallery_type": {
+      "type": "enumeration",
+      "enum": [
+        "Classique",
+        "Masonry"
+      ],
+      "default": "Masonry"
+    },
+    "columns": {
+      "type": "enumeration",
+      "enum": [
+        "Un",
+        "Deux",
+        "Trois",
+        "Quatre"
+      ],
+      "default": "Trois",
+      "required": false
     }
+  }
 }
