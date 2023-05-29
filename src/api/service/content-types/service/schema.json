@@ -43,7 +43,7 @@
         "Droite",
         "Bas"
       ],
-      "default": "Gauche"
+      "default": "Droite"
     },
     "url": {
       "type": "string",

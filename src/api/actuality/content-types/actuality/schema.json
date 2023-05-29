@@ -51,7 +51,7 @@
         "Droite",
         "Bas"
       ],
-      "default": "Gauche"
+      "default": "Droite"
     },
     "components": {
       "type": "dynamiczone",

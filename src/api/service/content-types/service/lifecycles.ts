@@ -25,7 +25,7 @@ export default {
         entries.forEach((entry: Service.Type) => {
             if (entry.id !== where.id) {
                 if (entry.url === data.url) {
-                    throw new ValidationError('Une actualité possèdant le même titre existe déjà à cette date. Deux actualités ne peuvent pas posséder la même date et le même titre.');
+                    throw new ValidationError('Une page existe déjà avec ce titre, deux pages ne peuvent pas possèder le même titre.');
                 }
             }
         })
