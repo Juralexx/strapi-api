@@ -70,7 +70,7 @@ const defaultConfig = {
         ]
     },
     fontSize: {
-        options: [9, 11, 13, 'default', 17, 19, 21, 27, 35],
+        options: [10, 12, 14, 'default', 18, 20, 22, 24, 26, 28, 30, 32, 34],
         supportAllValues: false
     },
     fontFamily: {

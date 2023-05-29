@@ -13,6 +13,10 @@ import ckeditor5Dll from 'ckeditor5/build/ckeditor5-dll.js';
 import ckeditor5EditorClassicDll from '@ckeditor/ckeditor5-editor-classic/build/editor-classic.js';
 
 import sanitize from './utils/utils';
+import './styles/variables.css'
+import './styles/cols.css'
+import './styles/container.css'
+import './styles/classes.css'
 
 const CKEditorInput = ({
     attribute,
