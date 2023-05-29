@@ -53,7 +53,7 @@ export const decodeHtmlEntity = (str: string) => {
  * @param {*} string String to check
  */
 
-export const isHTML = (string) => {
+export const isHTML = (string: string) => {
     let regexp = new RegExp(/<(?=.*? .*?\/ ?>|br|hr|input|!--|wbr)[a-z]+.*?>|<([a-z]+).*?<\/\1>/i)
     if (regexp.test(string)) return true
     else return false
